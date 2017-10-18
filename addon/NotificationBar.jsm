@@ -72,6 +72,18 @@ class NotificationBar {
     embeddedBrowser.setAttribute("id", "focused-cfr-notificationbar");
     embeddedBrowser.setAttribute("src", "resource://focused-cfr-shield-study-content/notificationbar/notificationBar.html");
     embeddedBrowser.setAttribute("type", "content");
+    // Thought these attributes might let the <browser> element's content extend down past the specified distance...
+    // From Potch: https://www.dropbox.com/s/0bag5j2qkzsmpgo/Screenshot%202017-10-18%2014.16.19.png?dl=0
+    // Web Extensions already do this (convert normal HTML/JS/CSS into XUL, and dropdowns in those panels work)
+    embeddedBrowser.setAttribute("webextension-view-type", "popup");
+    embeddedBrowser.setAttribute("transparent", "true");
+    embeddedBrowser.setAttribute("tooltip", "aHTMLTooltip");
+    embeddedBrowser.setAttribute("contextmenu", "contentAreaContextMenu");
+    embeddedBrowser.setAttribute("selectmenulist", "ContentSelectDropdown");
+    embeddedBrowser.setAttribute("selectmenuconstrained", "false");
+    embeddedBrowser.setAttribute("clickthrough", "never");
+    embeddedBrowser.setAttribute("autocompletepopup", "PopupAutoComplete");
+    // End of additional attributes ^^
     embeddedBrowser.setAttribute("disableglobalhistory", "true");
     embeddedBrowser.setAttribute("flex", "1");
 

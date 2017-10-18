@@ -160,13 +160,15 @@ a {
   content:'';
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid var(--reject-button-background-color);
+  /*border-bottom: 10px solid var(--reject-button-background-color);*/
+  border-bottom: 10px solid orange;
 }
 
 .dropdown-item {
   padding: 10px;
   border-bottom: 1px solid var(--primary-border-color);
-  background-color: var(--reject-button-background-color);
+  /*background-color: var(--reject-button-background-color);*/
+  background-color: orange;
   transition: background-color 0.5s;
 }
 

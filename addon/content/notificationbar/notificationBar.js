@@ -23,9 +23,9 @@ addMessageListener("FocusedCFR::load", {
           url: data.primaryButton.url,
         },
         secondaryButton: {
-          label: "",
+          label: "Test",
           dropdownOptions: [
-
+            "Don't show this again",
           ],
         },
         starRating: {
@@ -226,7 +226,7 @@ const notificationBar = {
       this.linkRightEle.style.display = "none";
     }
 
-    if (recipe.notificationBar.secondaryButton.dropdownOptions === []) {
+    if (recipe.notificationBar.secondaryButton.dropdownOptions !== []) {
       this.addDropdownMenuContent();
     } else {
       this.secondaryButtonShowDropdownEle.style.display = "none";
@@ -280,7 +280,7 @@ const notificationBar = {
     const numDropdownMenuItems = recipe.notificationBar.secondaryButton.dropdownOptions.length;
     const dropdownMenuItemEles = this.dropdownMenuEle.children;
     for (let i = 0; i < numDropdownMenuItems; i++) {
-      dropdownMenuItemEles[i].textContent = recipe.notificationBar.secondaryButton.dropdownOptions[i].label;
+      dropdownMenuItemEles[i].textContent = recipe.notificationBar.secondaryButton.dropdownOptions[i];
     }
   },
 
